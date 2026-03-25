@@ -1,61 +1,59 @@
 /* ============================================================
-   Visite Rio Piracicaba — Correções CSS para Hello Elementor
+   Uptravel Turismo — Correções CSS para Hello Elementor
    Cole em: Painel WP > Aparência > Personalizar > CSS Adicional
    ============================================================ */
 
 
 /* ----------------------------------------------------------
    1. MARGEM BRANCA LATERAL
-   Remove margens/paddings padrão do browser e do tema
+   Faixa branca visível no lado direito da tela
    ---------------------------------------------------------- */
 
-*, *::before, *::after {
-    box-sizing: border-box;
+html {
+    overflow-x: hidden;
+    margin-top: 0 !important; /* neutraliza margin do admin bar no front-end */
 }
 
-html,
 body {
     margin: 0 !important;
     padding: 0 !important;
     overflow-x: hidden;
     width: 100%;
+    max-width: 100vw;
 }
 
-/* Remove a margem que o WordPress injeta por causa da admin bar */
-html {
-    margin-top: 0 !important;
+/* Wrapper principal do Hello Elementor */
+.site,
+#page {
+    overflow: hidden;
+    width: 100%;
 }
 
-/* Garante que as sections do Elementor ocupem largura total */
+/* Sections e containers do Elementor sem vazamento lateral */
+.elementor-section,
 .elementor-section.elementor-section-full_width,
 .e-con,
-.e-con-inner {
+.e-con-full {
     max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-/* Container interno do Elementor — remove padding lateral indesejado */
-.elementor-container {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Site wrapper do Hello Elementor */
-.site,
-.site-content,
-#content {
-    margin: 0 !important;
-    padding: 0 !important;
+/* Container interno — não deixa o boxed criar margens inesperadas */
+.elementor-section-boxed > .elementor-container {
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
 /* ----------------------------------------------------------
    2. CORES SOBRESCRITAS PELO TEMA
-   Hello Elementor define cores padrão que sobrescrevem o Elementor
+   Hello Elementor sobrescreve links, headings e botões
    ---------------------------------------------------------- */
 
-/* Links — herda a cor definida no Elementor */
+/* Links herdam a cor definida no Elementor */
 a,
 a:visited,
 a:hover,
@@ -65,149 +63,190 @@ a:active {
     text-decoration: none;
 }
 
-/* Títulos — herda cor do elemento pai (Elementor) */
+/* Títulos herdam fonte e cor do Elementor */
 h1, h2, h3, h4, h5, h6 {
     color: inherit;
     font-family: inherit;
     line-height: inherit;
+    margin-top: 0;
 }
 
-/* Parágrafos e textos */
-p, span, li {
-    color: inherit;
-}
-
-/* Botões do Elementor não devem ser sobrescritos pelo tema */
+/* Botões do Elementor não sofrem override do tema */
 .elementor-button,
 .elementor-button:hover,
-.elementor-button:focus {
-    color: inherit;
-    background-color: inherit;
-    border-color: inherit;
+.elementor-button:focus,
+.elementor-button:visited {
+    color: inherit !important;
+    background-color: inherit !important;
+    border-color: inherit !important;
 }
 
-/* Remove o azul padrão do WordPress em botões/links */
+/* Remove variáveis CSS do WordPress que sobrescrevem o Elementor */
 :root {
-    --wp--preset--color--primary: inherit;
-    --wp--preset--color--secondary: inherit;
+    --wp--preset--color--primary: initial;
+    --wp--preset--color--secondary: initial;
+    --wp--preset--color--foreground: initial;
+    --wp--preset--color--background: initial;
 }
 
 
 /* ----------------------------------------------------------
    3. ESPAÇAMENTO DO HERO
-   Corrige o gap entre header e a primeira section (hero)
+   O hero tem gap excessivo no topo após o header
    ---------------------------------------------------------- */
 
-/* Remove espaço extra antes do primeiro elemento da página */
-.elementor-section:first-of-type,
-.e-con:first-of-type,
-.elementor-top-section:first-of-type {
-    margin-top: 0 !important;
+/* Remove qualquer margin/padding residual antes do hero */
+.site-content,
+#content,
+.page-content {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Quando o header é transparente/absoluto, o hero precisa compensar */
-.site-header ~ .site-content .elementor-section:first-child {
+/* Primeira section da página (hero) — zera espaço extra */
+.elementor-top-section:first-child,
+.e-con:first-child {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
-/* Se o header for fixo (sticky), ajuste o valor abaixo
-   conforme a altura real do seu header (ex: 80px, 100px) */
-/* .page-content > .elementor:first-child .elementor-section:first-child {
-    padding-top: 80px !important;
+/* Se o header for fixo (position: fixed), descomente e ajuste
+   o valor para a altura exata do header */
+/* body:not(.elementor-editor-active) .elementor-top-section:first-child {
+    padding-top: 90px !important;
 } */
 
-/* Evita que a admin bar (logado) empurre o conteúdo */
+/* Admin bar (quando logado) não deve empurrar o layout */
 @media screen and (min-width: 601px) {
     body.admin-bar .site-header {
-        top: 0;
+        top: 32px; /* altura da admin bar no desktop */
     }
-    body.admin-bar {
-        margin-top: 0 !important;
+}
+@media screen and (max-width: 600px) {
+    body.admin-bar .site-header {
+        top: 46px; /* altura da admin bar no mobile */
     }
 }
 
 
 /* ----------------------------------------------------------
    4. HEADER + MENU
-   Correções no cabeçalho do Hello Elementor
+   Header com ~180px de altura e menu sem alinhamento
    ---------------------------------------------------------- */
 
-/* Header principal */
-.site-header {
+/* Header principal — altura compacta */
+.site-header,
+.elementor-location-header,
+header.site-header {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
     z-index: 999;
 }
 
-/* Remove padding lateral do header */
-.site-header .site-branding,
-.site-header .main-navigation,
-.site-header .site-navigation {
-    padding: 0;
-    margin: 0;
+/* Se o header do Elementor tem padding excessivo via widget */
+.elementor-location-header .elementor-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Reduz a altura do header — ajuste o valor conforme necessário */
+.site-header .elementor-section,
+.elementor-location-header .elementor-section {
+    min-height: auto !important;
+}
+
+/* Alinhamento do logo + menu na mesma linha */
+.site-header .elementor-container,
+.elementor-location-header .elementor-container {
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+/* Logo */
+.site-branding,
+.elementor-widget-site-logo,
+.elementor-widget-image {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Menu de navegação */
-.main-navigation ul {
+.main-navigation,
+.elementor-nav-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.main-navigation ul,
+.elementor-nav-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.main-navigation ul li {
+.main-navigation ul li,
+.elementor-nav-menu ul li {
     margin: 0;
     padding: 0;
 }
 
-.main-navigation ul li a {
+.main-navigation ul li a,
+.elementor-nav-menu ul li a {
     display: inline-block;
     padding: 8px 16px;
     color: inherit;
-    font-weight: inherit;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
-.main-navigation ul li a:hover {
-    opacity: 0.8;
+.main-navigation ul li a:hover,
+.elementor-nav-menu ul li a:hover {
+    opacity: 0.75;
 }
 
-/* Dropdown do menu */
+/* Dropdown */
 .main-navigation ul ul {
+    position: absolute;
     background: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    min-width: 200px;
+    min-width: 220px;
+    padding: 8px 0;
+    z-index: 9999;
 }
 
 .main-navigation ul ul li a {
     color: #333;
+    text-transform: none;
+    letter-spacing: normal;
     padding: 10px 20px;
     display: block;
+    font-size: 14px;
 }
 
-/* Menu mobile */
+/* Mobile */
 @media (max-width: 768px) {
     .site-header {
-        padding: 0 16px;
+        padding: 0 16px !important;
     }
 
     .main-navigation ul {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .main-navigation ul li a {
         padding: 12px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-}
-
-/* Remove margens extras que o Hello Elementor coloca no wrapper */
-.header-widget-area,
-.elementor-location-header {
-    width: 100%;
-    margin: 0;
-    padding: 0;
 }
