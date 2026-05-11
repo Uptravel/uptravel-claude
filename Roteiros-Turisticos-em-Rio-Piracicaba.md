@@ -16,7 +16,7 @@ Nossos **roteiros turísticos em Rio Piracicaba** foram desenhados para quem bus
 
 ## O que você vai viver
 
-- **Degustações que contam histórias** — queijos artesanais, cafés especiais, méis e produtos regionais direto de quem produz.
+- **Degustações que contam histórias** — queijos artesanais, frutas, méis e doces artesanais e produtos regionais direto de quem produz.
 - **Visitas culturais e roteiros afetivos** — paisagens, memórias e encontros que aproximam você da verdadeira essência mineira.
 - **Experiências rurais com hora marcada para o coração** — contato direto com produtores locais, tradições vivas e a hospitalidade que só Minas oferece.
 - **Natureza em ritmo de pausa** — paisagens naturais para respirar fundo, desacelerar e reencontrar o bem-estar.
