@@ -1,0 +1,195 @@
+{
+  "brand": {
+    "name": "Roteiros Turísticos em Rio Piracicaba",
+    "company": "Uptravel Turismo",
+    "positioning": "A Uptravel Turismo transforma viagens em experiências acolhedoras, sofisticadas e inesquecíveis em Minas Gerais.",
+    "tagline": "A forma mais autêntica e acolhedora de viver Minas Gerais."
+  },
+  "colorPalette": {
+    "primary": {
+      "azulPrincipal": {
+        "hex": "#00699B",
+        "application": "Identidade principal, confiança, botões e títulos"
+      },
+      "azulEscuro": {
+        "hex": "#004F75",
+        "application": "Sofisticação, profundidade e contraste"
+      },
+      "azulClaro": {
+        "hex": "#0088C8",
+        "application": "Destaques modernos e elementos digitais"
+      },
+      "douradoPremium": {
+        "hex": "#C9A84C",
+        "application": "Exclusividade, detalhes refinados e sensação premium"
+      },
+      "douradoClaro": {
+        "hex": "#E8C97A",
+        "application": "Acabamentos elegantes e suavidade visual"
+      },
+      "creme": {
+        "hex": "#F9F5EE",
+        "application": "Fundo sofisticado, acolhedor e clean"
+      }
+    },
+    "neutrals": {
+      "darkNavy": {
+        "hex": "#12202B",
+        "application": "Textos fortes, sofisticação e contraste premium"
+      },
+      "textoPrincipal": {
+        "hex": "#2C3E50",
+        "application": "Legibilidade elegante e moderna"
+      },
+      "branco": {
+        "hex": "#FFFFFF",
+        "application": "Respiro visual e leveza"
+      },
+      "cinzaClaro": {
+        "hex": "#F4F7FA",
+        "application": "Fundos secundários e blocos informativos"
+      },
+      "cinzaMedio": {
+        "hex": "#E8EDF2",
+        "application": "Divisões suaves e equilíbrio visual"
+      }
+    }
+  },
+  "visualIdentityFeel": {
+    "overall": [
+      "confiança",
+      "sofisticação",
+      "acolhimento",
+      "exclusividade",
+      "turismo premium acessível",
+      "tranquilidade",
+      "experiência organizada e segura"
+    ],
+    "blueReinforces": [
+      "credibilidade",
+      "segurança na viagem",
+      "profissionalismo"
+    ],
+    "goldReinforces": [
+      "experiência premium",
+      "valor agregado",
+      "exclusividade"
+    ],
+    "creamBalances": [
+      "acolhimento",
+      "leveza",
+      "estética sofisticada e emocional"
+    ]
+  },
+  "typography": {
+    "fonts": [
+      {
+        "name": "Tenor Sans",
+        "usage": [
+          "títulos principais",
+          "campanhas premium",
+          "hero sections",
+          "headlines sofisticadas"
+        ],
+        "feel": "Elegância minimalista e turismo de alto padrão"
+      },
+      {
+        "name": "Comfortaa",
+        "usage": [
+          "destaques leves",
+          "chamadas amigáveis",
+          "redes sociais",
+          "elementos humanizados"
+        ],
+        "feel": "Acolhimento, proximidade e modernidade"
+      },
+      {
+        "name": "Garamond",
+        "usage": [
+          "textos institucionais",
+          "storytelling",
+          "materiais culturais",
+          "roteiros afetivos"
+        ],
+        "feel": "Tradição, cultura e sofisticação clássica"
+      },
+      {
+        "name": "Cormorant",
+        "usage": [
+          "campanhas emocionais",
+          "identidade premium",
+          "frases de impacto",
+          "estética editorial"
+        ],
+        "feel": "Luxo discreto e experiência refinada"
+      },
+      {
+        "name": "Nunito",
+        "usage": [
+          "corpo de texto",
+          "site",
+          "anúncios",
+          "leitura rápida",
+          "interfaces digitais"
+        ],
+        "feel": "Modernidade, conforto visual e acessibilidade"
+      }
+    ],
+    "hierarchy": {
+      "headlines": "Tenor Sans",
+      "editorialAccents": "Cormorant",
+      "storytelling": "Garamond",
+      "socialAndFriendly": "Comfortaa",
+      "body": "Nunito"
+    }
+  },
+  "visualDirection": {
+    "imageryStyle": [
+      "iluminação natural",
+      "clima cinematográfico",
+      "pessoas reais",
+      "gastronomia mineira",
+      "experiências autênticas",
+      "natureza",
+      "momentos espontâneos",
+      "estética clean e sofisticada"
+    ],
+    "visualElements": [
+      "curvas suaves",
+      "texturas naturais",
+      "elementos orgânicos",
+      "linhas elegantes",
+      "detalhes dourados discretos",
+      "transparências leves",
+      "fundos claros e sofisticados"
+    ],
+    "avoid": [
+      "neon",
+      "vermelho vibrante",
+      "excesso de preto",
+      "estética de excursão popular",
+      "layouts poluídos",
+      "fontes agressivas",
+      "visual genérico de agência barata",
+      "elementos excessivamente urbanos"
+    ]
+  },
+  "metaAdsApplication": {
+    "creatives": [
+      "vídeos lifestyle",
+      "reels cinematográficos",
+      "closes emocionais",
+      "gastronomia",
+      "natureza",
+      "cultura",
+      "experiências reais"
+    ],
+    "visualLanguage": [
+      "premium acolhedor",
+      "emocional",
+      "elegante sem exagero",
+      "Minas contemporânea",
+      "turismo afetivo"
+    ]
+  }
+}
